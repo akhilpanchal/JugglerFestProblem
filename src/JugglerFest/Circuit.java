@@ -12,23 +12,12 @@
 
 package JugglerFest;
 
-public class Circuit {
+public class Circuit extends Festival {
 
-	private String name;
-	private Aspect skill;
-	private static int count;	
-	
 	//-----< Default constructor for a Circuit >-----
 	public Circuit(){
-		count++;
 	}
 
-	//-----< Getter for number of Circuits in the problem >-----
-	public static int getCount(){
-		return count;
-	}
-	
-	
 	//-----< Setters and Getters for Name of the Circuit >-----
 	public void setName(String s){
 		name = s;
@@ -37,11 +26,11 @@ public class Circuit {
 		return name;
 	}
 	
-	//-----< Setters and Getters for the Aspect of the Circuit >-----
-	public void setAspect(int h, int e, int p){
-		skill = new Aspect(h, e, p);
+	//-----< Setters and Getters for the SkillSet of the Circuit >-----
+	public void setSkillSet(int h, int e, int p){
+		skill = new SkillSet(h, e, p);
 	}
-	public Aspect getAspect(){
+	public SkillSet getSkillSet(){
 		return skill;
 	}
 }

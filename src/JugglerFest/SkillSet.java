@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////
-// Aspect.java - 		Represents various skills required for	 //
+// SkillSet.java - 		Represents various skills required for	 //
 //						a Circuit or a Juggler					 //
 // Ver 1.0                                                       //
 // Application: 		JugglerFest Problem				         //
@@ -12,30 +12,33 @@
 
 package JugglerFest;
 
-public class Aspect {
-	public int H;
-	public int E;
-	public int P;
+public class SkillSet {
+	private int h;
+	private int e;
+	private int p;
 	
-	//-----< Default constructor for an Aspect>-----
-	public Aspect(int h, int e, int p){
-		if(h>-1 && h<11 && e>-1 && e<11 && p>-1 && p<11){
-			H=h;
-			E=e;
-			P=p;
-		}
-		else
-			System.out.println("Skill Values out of range! Please Re-Enter");
+	//-----< Default constructor for an SkillSet>-----
+	public SkillSet(int h, int e, int p){
+		validateSkills(h, e, p);
+		this.h = h;
+		this.e = e;
+		this.p = p;
 	}
-	
+
+	void validateSkills(int h, int e, int p) {
+		if(!(h>-1 && h<11 && e>-1 && e<11 && p>-1 && p<11)){
+			System.out.println("Skill Values out of range! Please Re-Enter");
+		}
+	}
+
 	//-----< Setters and Getters for various skills of the Circuit or the Juggler >-----
 	public int getH(){
-		return H;
+		return h;
 	}
 	public int getE(){
-		return E;
+		return e;
 	}
 	public int getP(){
-		return P;
+		return p;
 	}
 }

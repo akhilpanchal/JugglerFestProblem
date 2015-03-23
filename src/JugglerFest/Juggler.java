@@ -13,22 +13,15 @@
 package JugglerFest;
 import java.util.*;
 
-public class Juggler {
+public class Juggler extends Festival{
 
 	private String name;
+	private SkillSet skill;
 	private Map<Circuit, Integer> cir_pref;
-	private static int count;
-	private Aspect skill;
 
 	//-----< Default constructor for a Juggler >-----
 	public Juggler(){
 		cir_pref = new LinkedHashMap<Circuit,Integer>();
-		count++;
-	}
-	
-	//-----< Getter for number of Jugglers in the problem >-----
-	public static int getCount(){
-		return count;
 	}
 	
 	//-----< Setters and Getters for Name of the Juggler >-----
@@ -39,6 +32,14 @@ public class Juggler {
 		return name;
 	}
 
+	//-----< Setters and Getters for the SkillSet of the Circuit >-----
+	public void setSkillSet(int h, int e, int p){
+		skill = new SkillSet(h, e, p);
+	}	
+	public SkillSet getSkillSet(){
+		return skill;
+	}
+
 	//-----< Setters and Getters for preference circuits of the Juggler >-----
 	public Map<Circuit,Integer> getPreferences(){
 		return cir_pref;
@@ -46,12 +47,5 @@ public class Juggler {
 	public void addCircuitPreference(Circuit pref, int x){
 		cir_pref.put(pref,x);
 	}
-	
-	//-----< Setters and Getters for the Aspect of the Circuit >-----
-	public void setAspect(int h, int e, int p){
-		skill = new Aspect(h, e, p);
-	}	
-	public Aspect getAspect(){
-		return skill;
-	}
+
 }
